@@ -3,7 +3,7 @@ terraform {
     region = "us-east-2"
     bucket = "epam-terraform-remote-state"
     dynamodb_table = "terraform-lock"
-    key  = "consul/state.tfstate"
+    key  = "consuls3/state.tfstate"
     encrypt = true
   }
 }
