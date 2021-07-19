@@ -16,7 +16,7 @@ resource "null_resource" "ansible_automation" {
     }
 
   provisioner "local-exec" {
-    command = "sleep 50; ansible-galaxy install -p ../ansible/roles -r ../ansible/requirements.yml --force && cd ../ansible && ansible-playbook --vault-password-file /var/lib/jenkins/mysecret.txt -i aws_ec2.yaml consul.yml"
+    command = "sleep 50; ansible-galaxy install -p ../ansible/roles -r ../ansible/requirements.yml --force && cd ../ansible && ansible-playbook consul.yml -i aws_ec2.yaml"
   }
   depends_on = [
     aws_instance.Consul
